@@ -4,12 +4,8 @@ int add(int i, int j) {
     return i + j;
 }
 
-namespace py = pybind11;
-
-PYBIND11_PLUGIN(example) {
-    py::module m("example", "pybind11 example plugin");
+PYBIND11_MODULE(example, m) {
+    m.doc() = "pybind11 example plugin"; // optional module docstring
 
     m.def("add", &add, "A function which adds two numbers");
-
-    return m.ptr();
 }
