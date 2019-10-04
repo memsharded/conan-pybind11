@@ -14,12 +14,12 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 
 # Using the pybind cmake helpers:
-set(PYBIND11_PYTHON_VERSION 2.7)
+set(PYBIND11_PYTHON_VERSION 3.7)
 find_package(pybind11 REQUIRED)
 pybind11_add_module(example MODULE example.cpp)
 
 # USING plain cmake:
-# find_package(PythonLibs 2.7 REQUIRED)
+# find_package(PythonLibs 3.7 REQUIRED)
 # add_library(example SHARED "example.cpp")
 # target_include_directories(example PRIVATE ${PYTHON_INCLUDE_DIRS})
 # target_link_libraries(example PUBLIC ${PYTHON_LIBRARY})
