@@ -1,6 +1,6 @@
 env:
    global:
-     - CONAN_REFERENCE: "pybind11/2.3.0"
+     - CONAN_REFERENCE: "pybind11/2.4.2"
      - CONAN_USERNAME: "conan"
      - CONAN_STABLE_BRANCH_PATTERN: "release/*"
      - CONAN_CHANNEL: "stable"

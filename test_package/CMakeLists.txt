@@ -14,7 +14,14 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_RELEASE ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
 
 # Using the pybind cmake helpers:
-set(PYBIND11_PYTHON_VERSION 2.7)
+
+find_package(Python COMPONENTS Interpreter)
+
+if (NOT ${Python_FOUND})
+    message(FATAL_ERROR "No Python found")
+endif()
+
+set(PYBIND11_PYTHON_VERSION ${Python_VERSION})
 find_package(pybind11 REQUIRED)
 pybind11_add_module(example MODULE example.cpp)
 
